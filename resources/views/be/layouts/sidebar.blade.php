@@ -64,6 +64,12 @@
                     <span class="link-title">Type</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="{{ route('network.index') }}" class="nav-link">
+                    <i class="link-icon" data-feather="rss"></i>
+                    <span class="link-title">Network</span>
+                </a>
+            </li>
             <li class="nav-item nav-category">Setting</li>
             <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="#uiComponents" role="button" aria-expanded="false"
