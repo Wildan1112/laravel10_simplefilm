@@ -44,6 +44,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/import-type', [TypeController::class, 'import'])->name('import.type');
     Route::post('/import-type', [TypeController::class, 'importStore'])->name('import.type');
     Route::get('/export-type', [TypeController::class, 'export'])->name('export.type');
+    Route::get('/import-network', [NetworkController::class, 'import'])->name('import.network');
     Route::post('/import-network', [NetworkController::class, 'importStore'])->name('import.network');
     Route::get('/export-network', [NetworkController::class, 'export'])->name('export.network');
 
