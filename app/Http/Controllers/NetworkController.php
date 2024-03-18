@@ -72,4 +72,32 @@ class NetworkController extends Controller
 
         return redirect()->route('network.index')->with($notification);
     }
+    public function import()
+    {
+        return view('pages.network.import');
+    }
+
+    public function importStore(Request $request)
+    {
+        $request->validate([
+            'file' => 'required|mimes:xlsx,csv'
+        ]);
+
+        // Excel::import(new GenresImport, request()->file('file'));
+
+        // $notification = array(
+        //     'alert-type' => 'success',
+        //     'message' => 'Data Genre Imported Successfully!'
+        // );
+
+        // return redirect()->route('genre.index')->with($notification);
+    }
+
+    public function export()
+    {
+        dd('export');
+
+
+        // return Excel::download(new GenresExport, 'data-genre.xlsx');
+    }
 }
