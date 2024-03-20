@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\NetworksImport;
 use App\Models\Network;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class NetworkController extends Controller
 {
@@ -83,14 +85,14 @@ class NetworkController extends Controller
             'file' => 'required|mimes:xlsx,csv'
         ]);
 
-        // Excel::import(new GenresImport, request()->file('file'));
+        Excel::import(new NetworksImport, request()->file('file'));
 
-        // $notification = array(
-        //     'alert-type' => 'success',
-        //     'message' => 'Data Genre Imported Successfully!'
-        // );
+        $notification = array(
+            'alert-type' => 'success',
+            'message' => 'Data Network Imported Successfully!'
+        );
 
-        // return redirect()->route('genre.index')->with($notification);
+        return redirect()->route('network.index')->with($notification);
     }
 
     public function export()

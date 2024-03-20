@@ -1,9 +1,9 @@
 @extends('be.layouts.app')
-@section('pageTitle', 'Import Type from Excel')
+@section('pageTitle', 'Import Network from Excel')
 @section('content')
     <nav class="page-breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('type.index') }}">Type</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('type.index') }}">Network</a></li>
             <li class="breadcrumb-item active" aria-current="page">Import</li>
         </ol>
     </nav>
@@ -12,9 +12,9 @@
             <div class="card">
                 <div class="card-body">
 
-                    <h6 class="card-title">Import Data Type from Excel</h6>
+                    <h6 class="card-title">Import Data Network from Excel</h6>
 
-                    <form class="forms-sample" action="{{ route('import.type') }}" method="POST"
+                    <form class="forms-sample" action="{{ route('import.network') }}" method="POST"
                         enctype="multipart/form-data">
 
                         @csrf
