@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\NetworksExport;
 use App\Imports\NetworksImport;
 use App\Models\Network;
 use Illuminate\Support\Str;
@@ -97,9 +98,6 @@ class NetworkController extends Controller
 
     public function export()
     {
-        dd('export');
-
-
-        // return Excel::download(new GenresExport, 'data-genre.xlsx');
+        return Excel::download(new NetworksExport, 'data-network.xlsx');
     }
 }
