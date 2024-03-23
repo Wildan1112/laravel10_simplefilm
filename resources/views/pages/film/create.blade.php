@@ -57,6 +57,19 @@
                             @enderror
                         </div>
                         <div class="mb-3">
+                            <label for="network" class="form-label">Network</label>
+                            <select class="form-select @error('network_id') is-invalid @enderror" id="network" required
+                                name="network_id" value="{{ old('network_id') }}">
+                                @foreach ($networks as $network)
+                                    <option value="{{ $network->id }}">{{ $network->name }}</option>
+                                @endforeach
+                            </select>
+                            @error('network_id')
+                                <label id="network_id-error" class="error invalid-feedback"
+                                    for="network_id">{{ $message }}</label>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
                             <label class="form-label">Genre</label>
                             <select class="js-example-basic-multiple form-select" multiple="multiple" data-width="100%"
                                 name="genres[]">

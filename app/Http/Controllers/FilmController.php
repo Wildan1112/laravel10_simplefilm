@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Film;
 use App\Models\Genre;
+use App\Models\Network;
 use App\Models\Status;
 use App\Models\Type;
 use Illuminate\Support\Str;
@@ -28,7 +29,8 @@ class FilmController extends Controller
         $status = Status::orderBy('name')->get();
         $genres = Genre::orderBy('name')->get();
         $types = Type::orderBy('name')->get();
-        return view('pages.film.create', compact('status', 'genres', 'types'));
+        $networks = Network::orderBy('name')->get();
+        return view('pages.film.create', compact('status', 'genres', 'types', 'networks'));
     }
 
     public function store(Request $request)
@@ -39,6 +41,7 @@ class FilmController extends Controller
             'synopsis' => 'required|string',
             'status_id' => 'required',
             'type_id' => 'required',
+            'network_id' => 'required',
             'genres' => 'array'
         ]);
 
@@ -57,6 +60,7 @@ class FilmController extends Controller
             'synopsis' => $request->synopsis,
             'status_id' => $request->status_id,
             'type_id' => $request->type_id,
+            'network_id' => $request->network_id,
         ]);
         // Attach genres
         $film->genres()->attach($request->genres);
@@ -74,7 +78,8 @@ class FilmController extends Controller
         $status = Status::orderBy('name')->get();
         $genres = Genre::orderBy('name')->get();
         $types = Type::orderBy('name')->get();
-        return view('pages.film.edit', compact('film', 'status', 'genres', 'types'));
+        $networks = Network::orderBy('name')->get();
+        return view('pages.film.edit', compact('film', 'status', 'genres', 'types', 'networks'));
     }
     public function update(Request $request, Film $film)
     {
@@ -84,6 +89,7 @@ class FilmController extends Controller
             'synopsis' => 'required|string',
             'status_id' => 'required',
             'type_id' => 'required',
+            'network_id' => 'required',
             'genres' => 'array'
         ]);
 
@@ -104,6 +110,7 @@ class FilmController extends Controller
                 'synopsis' => $request->synopsis,
                 'status_id' => $request->status_id,
                 'type_id' => $request->type_id,
+                'network_id' => $request->network_id,
             ]);
         } else {
             // without poster
@@ -113,6 +120,7 @@ class FilmController extends Controller
                 'synopsis' => $request->synopsis,
                 'status_id' => $request->status_id,
                 'type_id' => $request->type_id,
+                'network_id' => $request->network_id,
             ]);
         }
 

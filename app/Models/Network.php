@@ -17,8 +17,8 @@ class Network extends Model
         return 'slug';
     }
 
-    // public function films()
-    // {
-    //     return $this->hasMany(Film::class);
-    // }
+    public function films()
+    {
+        return $this->hasMany(Film::class);
+    }
 }
