@@ -66,8 +66,7 @@
                                         <td><span
                                                 class="badge border border-success text-success">{{ $film->type->name }}</span>
                                         </td>
-                                        <td><span
-                                                class="badge border border-info text-success">{{ $film->network->name }}</span>
+                                        <td><span class="badge bg-warning text-primary">{{ $film->network->name }}</span>
                                         </td>
                                         <td>
                                             <div class="d-flex">

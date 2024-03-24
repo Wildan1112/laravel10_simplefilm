@@ -40,12 +40,7 @@
                     </ul>
                 </div>
             </li>
-            <li class="nav-item">
-                <a href="{{ route('film.index') }}" class="nav-link">
-                    <i class="link-icon" data-feather="film"></i>
-                    <span class="link-title">Films</span>
-                </a>
-            </li>
+
             <li class="nav-item">
                 <a href="{{ route('status.index') }}" class="nav-link">
                     <i class="link-icon" data-feather="list"></i>
@@ -70,6 +65,13 @@
                     <span class="link-title">Network</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="{{ route('film.index') }}" class="nav-link">
+                    <i class="link-icon" data-feather="film"></i>
+                    <span class="link-title">Films</span>
+                </a>
+            </li>
+
             <li class="nav-item nav-category">Setting</li>
             <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="#uiComponents" role="button" aria-expanded="false"
